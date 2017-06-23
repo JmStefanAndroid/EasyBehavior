@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+
+            <com.flyco.tablayout.CommonTabLayout
+                android:id="@+id/uc_tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_centerVertical="true"
+                android:background="@android:color/white"
+                android:paddingBottom="8dp"
+                app:tl_indicator_color="@color/pink_fc4f74"
+                app:tl_indicator_corner_radius="2dp"
+                app:tl_indicator_height="4dp"
+                app:tl_indicator_margin_bottom="7dp"
+                app:tl_indicator_width="4dp"
+
+                app:tl_subtextSelectColor="#fc4f74"
+                app:tl_subtextUnselectColor="#333333"
+                app:tl_subtextsize="11sp"
+                app:tl_textSelectColor="#fc4f74"
+                app:tl_textUnselectColor="#333333"
+                app:tl_textsize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorBg" />
+
+            <LinearLayout
+                android:id="@+id/tag_ocreate_ll"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:text="Tags"
+                    android:textColor="#cc333333"
+                    android:textSize="12sp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/tag_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/uc_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBg" />
+</LinearLayout>

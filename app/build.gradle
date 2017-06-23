@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+def libs = rootProject.ext.libraries
+def testLibs = rootProject.ext.testingLibraries
+def cfg = rootProject.ext.configuration
+
+android {
+
+    compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
+    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion ANDROID_BUILD_MIN_SDK_VERSION as int
+        targetSdkVersion ANDROID_BUILD_TARGET_SDK_VERSION as int
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME
+        applicationId cfg.applicationId
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile testLibs["junit"]
+    compile libs["appcompat-v7"]
+    compile libs["design"]
+    compile libs["glide"]
+    compile libs["statusbar_util"]
+    compile project(':tabLayoutLibrary')
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.stefan.easybehavior.widget.DisInterceptNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/middle_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/bg_height"
+    android:tag="middle"
+    app:layout_collapseMode="parallax"
+    app:layout_collapseParallaxMultiplier="0.5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:minHeight="40dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/frag_uc_nickname_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="37dp"
+                android:text="Lover's Day"
+                android:textColor="@color/colorBlack33"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="37dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/frag_uc_msg_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_stroke_roundcir"
+                    android:gravity="center"
+                    android:text="chat"
+                    android:textColor="@color/colorBlack33" />
+
+                <TextView
+                    android:id="@+id/frag_uc_follow_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/selector_stroke_roundredcir"
+                    android:gravity="center"
+                    android:text="follow"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+
+            <TextView
+                android:id="@+id/frag_uc_interest_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="2dp"
+                android:maxLines="2"
+                android:paddingLeft="15dp"
+                android:text="music、dance、drive、fly ☀️🌞"
+                android:textColor="#aa333333"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/colorBg" />
+
+        <include layout="@layout/layout_func_in_uc" />
+
+
+    </LinearLayout>
+</me.stefan.easybehavior.widget.DisInterceptNestedScrollView>

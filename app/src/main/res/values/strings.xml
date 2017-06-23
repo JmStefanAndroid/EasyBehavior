@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EasyBehavior</string>
+
+    <string name="appbar_overscroll_behavior">me.stefan.easybehavior.behavior.AppBarLayoutOverScrollViewBehavior</string>
+    <string name="appbar_circleimageview_behavior">me.stefan.easybehavior.behavior.CircleImageInUsercBehavior</string>
+
+</resources>
