@@ -44,9 +44,10 @@ public class CircleImageInUsercBehavior extends CoordinatorLayout.Behavior<Circl
     //当dependency变化的时候调用
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, CircleImageView child, View dependency) {
+        //初始化一些基础参数
         init(parent, child, dependency);
+        //计算比例
         if (child.getY() <= 0) return false;
-
         float percent = (child.getY() - mToolBarHeight) / (mStartAvatarY - mToolBarHeight);
 
         if (percent < 0) {
@@ -54,13 +55,19 @@ public class CircleImageInUsercBehavior extends CoordinatorLayout.Behavior<Circl
         }
         if (this.percent == percent || percent > 1) return true;
         this.percent = percent;
-
+       //设置头像的大小
         ViewCompat.setScaleX(child, percent);
         ViewCompat.setScaleY(child, percent);
 
         return false;
     }
 
+    /**
+     * 初始化数据
+     * @param parent
+     * @param child
+     * @param dependency
+     */
     private void init(CoordinatorLayout parent, CircleImageView child, View dependency) {
         if (mStartAvatarY == 0) {
             mStartAvatarY = child.getY();

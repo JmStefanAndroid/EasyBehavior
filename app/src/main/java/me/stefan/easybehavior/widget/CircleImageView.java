@@ -27,7 +27,7 @@ import me.stefan.easybehavior.R;
 /**
  * Created by wxy on 16/6/27.
  */
-public class CircleImageView extends AppCompatImageView {
+public class CircleImageView extends ImageView {
     private static final ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;
 
     private static final Bitmap.Config BITMAP_CONFIG = Bitmap.Config.ARGB_8888;
