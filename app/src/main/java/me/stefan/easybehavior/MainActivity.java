@@ -1,6 +1,7 @@
 package me.stefan.easybehavior;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -168,17 +169,19 @@ public class MainActivity extends AppCompatActivity {
      * 初始化状态栏位置
      */
     private void initStatus() {
-        //注意了，这里使用了第三方库 StatusBarUtil，目的是改变状态栏的alpha
-        StatusBarUtil.setTransparentForImageView(MainActivity.this, null);
-        //这里是重设我们的title布局的topMargin，StatusBarUtil提供了重设的方法，但是我们这里有两个布局
-        //TODO 关于为什么不把Toolbar和@layout/layout_uc_head_title放到一起，是因为需要Toolbar来占位，防止AppBarLayout折叠时将title顶出视野范围
-        int statusBarHeight = getStatusBarHeight(MainActivity.this);
-        CollapsingToolbarLayout.LayoutParams lp1 = (CollapsingToolbarLayout.LayoutParams) titleContainer.getLayoutParams();
-        lp1.topMargin = statusBarHeight;
-        titleContainer.setLayoutParams(lp1);
-        CollapsingToolbarLayout.LayoutParams lp2 = (CollapsingToolbarLayout.LayoutParams) mToolBar.getLayoutParams();
-        lp2.topMargin = statusBarHeight;
-        mToolBar.setLayoutParams(lp2);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {//4.4以下不支持状态栏变色
+            //注意了，这里使用了第三方库 StatusBarUtil，目的是改变状态栏的alpha
+            StatusBarUtil.setTransparentForImageView(MainActivity.this, null);
+            //这里是重设我们的title布局的topMargin，StatusBarUtil提供了重设的方法，但是我们这里有两个布局
+            //TODO 关于为什么不把Toolbar和@layout/layout_uc_head_title放到一起，是因为需要Toolbar来占位，防止AppBarLayout折叠时将title顶出视野范围
+            int statusBarHeight = getStatusBarHeight(MainActivity.this);
+            CollapsingToolbarLayout.LayoutParams lp1 = (CollapsingToolbarLayout.LayoutParams) titleContainer.getLayoutParams();
+            lp1.topMargin = statusBarHeight;
+            titleContainer.setLayoutParams(lp1);
+            CollapsingToolbarLayout.LayoutParams lp2 = (CollapsingToolbarLayout.LayoutParams) mToolBar.getLayoutParams();
+            lp2.topMargin = statusBarHeight;
+            mToolBar.setLayoutParams(lp2);
+        }
     }
 
     /**
