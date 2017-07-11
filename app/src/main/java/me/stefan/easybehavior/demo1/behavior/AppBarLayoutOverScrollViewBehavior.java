@@ -1,4 +1,4 @@
-package me.stefan.easybehavior.behavior;
+package me.stefan.easybehavior.demo1.behavior;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;

@@ -1,4 +1,4 @@
-package me.stefan.easybehavior.behavior;
+package me.stefan.easybehavior.demo1.behavior;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;

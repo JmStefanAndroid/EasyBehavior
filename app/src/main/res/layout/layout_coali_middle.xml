@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.stefan.easybehavior.widget.DisInterceptNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="290dp"
+    android:background="@color/colorBg"
+    app:layout_collapseMode="pin">
+    <!--这个290是根据上面那个布局的高度计算得到-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_func_in_uc" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:tag="refresh">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="JmStefan"
+                android:textColor="@android:color/black" />
+
+            <me.stefan.easybehavior.demo2.widget.SmileView
+                android:id="@+id/smile_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="-16dp"
+                app:smil_line_width="3"
+                app:smil_radius="10" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</me.stefan.easybehavior.widget.DisInterceptNestedScrollView>

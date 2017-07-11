@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import me.stefan.easybehavior.behavior.AppBarLayoutOverScrollViewBehavior;
+import me.stefan.easybehavior.demo1.behavior.AppBarLayoutOverScrollViewBehavior;
 import me.stefan.easybehavior.fragment.ItemFragment;
 import me.stefan.easybehavior.fragment.MyFragmentPagerAdapter;
 import me.stefan.easybehavior.fragment.dummy.TabEntity;
@@ -34,7 +34,7 @@ import me.stefan.easybehavior.widget.RoundProgressBar;
 /**
  * @author stefan 邮箱：648701906@qq.com
  */
-public class MainActivity extends AppCompatActivity {
+public class Demo1Activity extends AppCompatActivity {
 
     private ImageView mZoomIv;
     private Toolbar mToolBar;
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_demo1);
 
         findId();
         initListener();
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 float percent = Float.valueOf(Math.abs(verticalOffset)) / Float.valueOf(appBarLayout.getTotalScrollRange());
                 if (titleCenterLayout != null && mAvater != null && mSettingIv != null && mMsgIv != null) {
                     titleCenterLayout.setAlpha(percent);
-                    StatusBarUtil.setTranslucentForImageView(MainActivity.this, (int) (255f * percent), null);
+                    StatusBarUtil.setTranslucentForImageView(Demo1Activity.this, (int) (255f * percent), null);
                     if (percent == 0) {
                         groupChange(1f, 1);
                     } else if (percent == 1) {
@@ -172,10 +172,10 @@ public class MainActivity extends AppCompatActivity {
     private void initStatus() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {//4.4以下不支持状态栏变色
             //注意了，这里使用了第三方库 StatusBarUtil，目的是改变状态栏的alpha
-            StatusBarUtil.setTransparentForImageView(MainActivity.this, null);
+            StatusBarUtil.setTransparentForImageView(Demo1Activity.this, null);
             //这里是重设我们的title布局的topMargin，StatusBarUtil提供了重设的方法，但是我们这里有两个布局
             //TODO 关于为什么不把Toolbar和@layout/layout_uc_head_title放到一起，是因为需要Toolbar来占位，防止AppBarLayout折叠时将title顶出视野范围
-            int statusBarHeight = getStatusBarHeight(MainActivity.this);
+            int statusBarHeight = getStatusBarHeight(Demo1Activity.this);
             CollapsingToolbarLayout.LayoutParams lp1 = (CollapsingToolbarLayout.LayoutParams) titleContainer.getLayoutParams();
             lp1.topMargin = statusBarHeight;
             titleContainer.setLayoutParams(lp1);

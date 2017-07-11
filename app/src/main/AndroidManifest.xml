@@ -12,13 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".MainActivity">
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Demo1Activity"
+            android:theme="@style/NoTitleTheme"></activity>
+        <activity android:name=".Demo2Activity"></activity>
     </application>
 
 </manifest>

@@ -22,11 +22,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    //请在使用demo或相同配置时一定要加上这句
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile testLibs["junit"]
     compile libs["appcompat-v7"]
     compile libs["design"]
     compile libs["glide"]

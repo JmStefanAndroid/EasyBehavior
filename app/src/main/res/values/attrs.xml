@@ -17,4 +17,10 @@
         <attr name="round_textsize" format="dimension" />
         <attr name="round_max" format="integer"></attr>
     </declare-styleable>
+
+    <declare-styleable name="SmileView">
+        <attr name="smil_radius" format="integer" />
+        <attr name="smil_line_width" format="integer" />
+        <attr name="smil_duration" format="integer" />
+    </declare-styleable>
 </resources>

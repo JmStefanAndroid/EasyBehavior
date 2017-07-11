@@ -36,13 +36,6 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
-
-        holder.mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(holder.mView.getContext(), "点击了Item:" + holder.getAdapterPosition(), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override

@@ -1,29 +1,29 @@
-package me.stefan.easybehavior.widget;
+package me.stefan.easybehavior.demo2.widget;
 
 import android.content.Context;
-import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
  * Created by stefan on 2017/5/26.
- * Func:
+ * Func:该类用于解决DisInterceptNestedScrollView 滑动后导致 下方RecyclerView 首次滑动被AppBarLayout拦截导致的滑动无效
  */
 
-public class DisInterceptNestedScrollView extends NestedScrollView {
+public class DisInterceptNestedRecyclerView extends RecyclerView {
     private float downY;
 
-    public DisInterceptNestedScrollView(Context context) {
+    public DisInterceptNestedRecyclerView(Context context) {
         super(context);
         requestDisallowInterceptTouchEvent(true);
     }
 
-    public DisInterceptNestedScrollView(Context context, AttributeSet attrs) {
+    public DisInterceptNestedRecyclerView(Context context, AttributeSet attrs) {
         super(context, attrs);
         requestDisallowInterceptTouchEvent(true);
     }
 
-    public DisInterceptNestedScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public DisInterceptNestedRecyclerView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         requestDisallowInterceptTouchEvent(true);
     }
@@ -67,5 +67,4 @@ public class DisInterceptNestedScrollView extends NestedScrollView {
             requestDisallowInterceptTouchEvent(false);
         }
     }
-
 }
