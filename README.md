@@ -6,12 +6,14 @@
 ----------
 ## 博文地址
   CSDN:http://blog.csdn.net/gjm15881133824/article/details/73742219
+  CSDN:http://blog.csdn.net/gjm15881133824/article/details/74946322
 ----------
 ## DEMO下载
   https://fir.im/ckh1
   ----------
 ## 效果图
- ![EasyBehavior](/gif/EasyBehavior.gif)  
+ ![EasyBehavior](/gif/EasyBehavior.gif) 
+ ![CoAliBehavior](http://img.blog.csdn.net/20170711122151166?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2ptMTU4ODExMzM4MjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast) 
 ----------
 ## 例子的实现
 注意：以下内容可能引起您的轻度不适（xing fen），请慎重阅读，例子中呢，用到了两个Behavior。</p>
