@@ -28,6 +28,7 @@ import me.stefan.easybehavior.fragment.ItemFragment;
 import me.stefan.easybehavior.fragment.MyFragmentPagerAdapter;
 import me.stefan.easybehavior.fragment.dummy.TabEntity;
 import me.stefan.easybehavior.widget.CircleImageView;
+import me.stefan.easybehavior.widget.NoScrollViewPager;
 import me.stefan.easybehavior.widget.RoundProgressBar;
 
 /**
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView mSettingIv, mMsgIv;
     private CircleImageView mAvater;
     private CommonTabLayout mTablayout;
-    private ViewPager mViewPager;
+    private NoScrollViewPager mViewPager;
 
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private List<Fragment> fragments;
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         mMsgIv = (ImageView) findViewById(R.id.uc_msg_iv);
         mAvater = (CircleImageView) findViewById(R.id.uc_avater);
         mTablayout = (CommonTabLayout) findViewById(R.id.uc_tablayout);
-        mViewPager = (ViewPager) findViewById(R.id.uc_viewpager);
+        mViewPager = (NoScrollViewPager) findViewById(R.id.uc_viewpager);
     }
 
     /**
@@ -198,17 +199,19 @@ public class MainActivity extends AppCompatActivity {
             case 1://完全展开 显示白色
                 mMsgIv.setImageResource(R.drawable.icon_msg);
                 mSettingIv.setImageResource(R.drawable.icon_setting);
+                mViewPager.setNoScroll(false);
                 break;
             case 2://完全关闭 显示黑色
                 mMsgIv.setImageResource(R.drawable.icon_msg_black);
                 mSettingIv.setImageResource(R.drawable.icon_setting_black);
+                mViewPager.setNoScroll(false);
                 break;
             case 0://介于两种临界值之间 显示黑色
                 if (lastState != 0) {
                     mMsgIv.setImageResource(R.drawable.icon_msg_black);
                     mSettingIv.setImageResource(R.drawable.icon_setting_black);
                 }
-
+                mViewPager.setNoScroll(true);
                 break;
         }
     }
