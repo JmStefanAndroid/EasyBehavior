@@ -34,14 +34,18 @@ public class DisInterceptNestedScrollView extends NestedScrollView {
     }
 
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        observeOrientation(ev);
+        requestDisallowInterceptTouchEvent(true);
         return super.dispatchTouchEvent(ev);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                observeOrientation(event);
+                break;
             case MotionEvent.ACTION_MOVE:
+
                 doRequstDisallow(event);
                 break;
             case MotionEvent.ACTION_UP:
