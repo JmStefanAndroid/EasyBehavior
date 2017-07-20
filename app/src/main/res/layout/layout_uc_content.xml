@@ -7,7 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
-    <android.support.v4.widget.NestedScrollView
+    <me.stefan.easybehavior.widget.DisInterceptNestedScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -67,9 +67,9 @@
 
             </LinearLayout>
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </me.stefan.easybehavior.widget.DisInterceptNestedScrollView>
 
-    <me.stefan.easybehavior.widget.NoScrollViewPager
+    <me.stefan.easybehavior.demo1.widget.NoScrollViewPager
         android:id="@+id/uc_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

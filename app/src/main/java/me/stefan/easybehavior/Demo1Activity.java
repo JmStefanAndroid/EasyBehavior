@@ -24,12 +24,12 @@ import java.util.List;
 import java.util.Random;
 
 import me.stefan.easybehavior.demo1.behavior.AppBarLayoutOverScrollViewBehavior;
+import me.stefan.easybehavior.demo1.widget.NoScrollViewPager;
+import me.stefan.easybehavior.demo1.widget.RoundProgressBar;
 import me.stefan.easybehavior.fragment.ItemFragment;
 import me.stefan.easybehavior.fragment.MyFragmentPagerAdapter;
 import me.stefan.easybehavior.fragment.dummy.TabEntity;
 import me.stefan.easybehavior.widget.CircleImageView;
-import me.stefan.easybehavior.widget.NoScrollViewPager;
-import me.stefan.easybehavior.widget.RoundProgressBar;
 
 /**
  * @author stefan 邮箱：648701906@qq.com

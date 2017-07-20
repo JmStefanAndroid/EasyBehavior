@@ -7,12 +7,9 @@ import android.view.MotionEvent;
 
 /**
  * Created by stefan on 2017/5/26.
- * Func:
+ * Func:用于子类防止父类拦截子类的事件
  */
-
 public class DisInterceptNestedScrollView extends NestedScrollView {
-    private float downY;
-
     public DisInterceptNestedScrollView(Context context) {
         super(context);
         requestDisallowInterceptTouchEvent(true);
@@ -28,25 +25,17 @@ public class DisInterceptNestedScrollView extends NestedScrollView {
         requestDisallowInterceptTouchEvent(true);
     }
 
-    @Override
-    public boolean startNestedScroll(int axes) {
-        return super.startNestedScroll(axes);
-    }
 
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        requestDisallowInterceptTouchEvent(true);
+        getParent().requestDisallowInterceptTouchEvent(true);
         return super.dispatchTouchEvent(ev);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                observeOrientation(event);
-                break;
             case MotionEvent.ACTION_MOVE:
-
-                doRequstDisallow(event);
+                requestDisallowInterceptTouchEvent(true);
                 break;
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
@@ -54,22 +43,6 @@ public class DisInterceptNestedScrollView extends NestedScrollView {
                 break;
         }
         return super.onTouchEvent(event);
-    }
-
-    private void observeOrientation(MotionEvent ev) {
-        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
-            downY = ev.getRawY();
-        } else if (ev.getAction() == MotionEvent.ACTION_MOVE) {
-            doRequstDisallow(ev);
-        }
-    }
-
-    private void doRequstDisallow(MotionEvent ev) {
-        if (ev.getRawY() > downY) {
-            requestDisallowInterceptTouchEvent(true);
-        } else {
-            requestDisallowInterceptTouchEvent(false);
-        }
     }
 
 }

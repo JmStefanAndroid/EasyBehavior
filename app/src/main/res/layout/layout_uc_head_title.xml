@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/title_layout"
     android:layout_width="match_parent"
     android:layout_height="@dimen/titlebar_height"
-    android:id="@+id/title_layout"
     app:layout_collapseMode="pin">
-
 
     <LinearLayout
         android:id="@+id/title_center_layout"
@@ -34,7 +33,7 @@
             android:textSize="28px" />
     </LinearLayout>
 
-    <me.stefan.easybehavior.widget.RoundProgressBar
+    <me.stefan.easybehavior.demo1.widget.RoundProgressBar
         android:id="@+id/uc_progressbar"
         android:layout_width="20dp"
         android:layout_height="20dp"
@@ -64,6 +63,5 @@
         android:paddingLeft="10dp"
         android:paddingRight="15dp"
         android:src="@drawable/icon_msg" />
-
 
 </RelativeLayout>

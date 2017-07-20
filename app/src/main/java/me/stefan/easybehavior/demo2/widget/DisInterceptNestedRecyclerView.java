@@ -11,7 +11,6 @@ import android.view.MotionEvent;
  */
 
 public class DisInterceptNestedRecyclerView extends RecyclerView {
-    private float downY;
 
     public DisInterceptNestedRecyclerView(Context context) {
         super(context);
@@ -34,7 +33,7 @@ public class DisInterceptNestedRecyclerView extends RecyclerView {
     }
 
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        observeOrientation(ev);
+        getParent().requestDisallowInterceptTouchEvent(true);
         return super.dispatchTouchEvent(ev);
     }
 
@@ -42,7 +41,7 @@ public class DisInterceptNestedRecyclerView extends RecyclerView {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_MOVE:
-                doRequstDisallow(event);
+                requestDisallowInterceptTouchEvent(true);
                 break;
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
@@ -52,19 +51,4 @@ public class DisInterceptNestedRecyclerView extends RecyclerView {
         return super.onTouchEvent(event);
     }
 
-    private void observeOrientation(MotionEvent ev) {
-        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
-            downY = ev.getRawY();
-        } else if (ev.getAction() == MotionEvent.ACTION_MOVE) {
-            doRequstDisallow(ev);
-        }
-    }
-
-    private void doRequstDisallow(MotionEvent ev) {
-        if (ev.getRawY() > downY) {
-            requestDisallowInterceptTouchEvent(true);
-        } else {
-            requestDisallowInterceptTouchEvent(false);
-        }
-    }
 }

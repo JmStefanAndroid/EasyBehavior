@@ -1,4 +1,4 @@
-package me.stefan.easybehavior.widget;
+package me.stefan.easybehavior.demo1.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
