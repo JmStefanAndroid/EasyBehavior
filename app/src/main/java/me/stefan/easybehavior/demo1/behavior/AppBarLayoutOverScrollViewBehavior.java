@@ -131,7 +131,7 @@ public class AppBarLayoutOverScrollViewBehavior extends AppBarLayout.Behavior {
         target.setScrollY(0);
 
         middleLayout.setTop(mLastBottom - mMiddleHeight);
-//        middleLayout.setBottom(mLastBottom);
+        middleLayout.setBottom(mLastBottom);
 
         if (onProgressChangeListener != null) {
             float progress = Math.min((mLastScale - 1) / MAX_REFRESH_LIMIT, 1);//计算0~1的进度
@@ -174,7 +174,6 @@ public class AppBarLayoutOverScrollViewBehavior extends AppBarLayout.Behavior {
                                 abl.setBottom((int) (mLastBottom - (mLastBottom - mParentHeight) * animation.getAnimatedFraction()));
                                 middleLayout.setTop((int) (mLastBottom -
                                         (mLastBottom - mParentHeight) * animation.getAnimatedFraction() - mMiddleHeight));
-//                                middleLayout.setBottom((int) (mLastBottom - (mLastBottom - mParentHeight) * animation.getAnimatedFraction()));
 
                                 if (onProgressChangeListener != null) {
                                     float progress = Math.min((value - 1) / MAX_REFRESH_LIMIT, 1);//计算0~1的进度
