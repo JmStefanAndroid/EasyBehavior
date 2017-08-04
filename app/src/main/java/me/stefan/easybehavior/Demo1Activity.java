@@ -26,7 +26,7 @@ import java.util.Random;
 import me.stefan.easybehavior.demo1.behavior.AppBarLayoutOverScrollViewBehavior;
 import me.stefan.easybehavior.demo1.widget.NoScrollViewPager;
 import me.stefan.easybehavior.demo1.widget.RoundProgressBar;
-import me.stefan.easybehavior.fragment.ItemFragment;
+import me.stefan.easybehavior.fragment.ItemFragment1;
 import me.stefan.easybehavior.fragment.MyFragmentPagerAdapter;
 import me.stefan.easybehavior.fragment.dummy.TabEntity;
 import me.stefan.easybehavior.widget.CircleImageView;
@@ -246,10 +246,10 @@ public class Demo1Activity extends AppCompatActivity {
 
     public List<Fragment> getFragments() {
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(new ItemFragment());
-        fragments.add(new ItemFragment());
-        fragments.add(new ItemFragment());
-        fragments.add(new ItemFragment());
+        fragments.add(new ItemFragment1());
+        fragments.add(new ItemFragment1());
+        fragments.add(new ItemFragment1());
+        fragments.add(new ItemFragment1());
         return fragments;
     }
 }

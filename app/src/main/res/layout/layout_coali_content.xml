@@ -8,7 +8,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <fragment
-        android:name="me.stefan.easybehavior.fragment.ItemFragment"
+        android:name="me.stefan.easybehavior.fragment.ItemFragment2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:tag="sample" />

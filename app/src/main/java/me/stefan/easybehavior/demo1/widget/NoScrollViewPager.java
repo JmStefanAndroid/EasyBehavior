@@ -3,6 +3,7 @@ package me.stefan.easybehavior.demo1.widget;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 
 /**
@@ -22,6 +23,7 @@ public class NoScrollViewPager extends ViewPager {
 
     public void setNoScroll(boolean noScroll) {
         this.noScroll = noScroll;
+        Log.e("fff","bL"+noScroll);
     }
 
     @Override
@@ -31,6 +33,7 @@ public class NoScrollViewPager extends ViewPager {
 
     @Override
     public boolean onTouchEvent(MotionEvent arg0) {
+        Log.e("onTouchEvent","bL"+noScroll);
         if (noScroll)
             return false;
         else
@@ -39,6 +42,7 @@ public class NoScrollViewPager extends ViewPager {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent arg0) {
+        Log.e("onInterceptTouchEvent","bL"+noScroll);
         if (noScroll)
             return false;
         else
