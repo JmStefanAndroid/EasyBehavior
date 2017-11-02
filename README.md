@@ -5,8 +5,8 @@
 - 通过Behavior实现它将是你的不二选择，本项目旨在帮助各位轻松实现自己的Behavior！
 ----------
 ## 博文地址
-  CSDN:http://blog.csdn.net/gjm15881133824/article/details/73742219
-  CSDN:http://blog.csdn.net/gjm15881133824/article/details/74946322
+  [例子1 链接](http://blog.csdn.net/gjm15881133824/article/details/73742219)
+  [例子2 链接](http://blog.csdn.net/gjm15881133824/article/details/74946322)
 ----------
 ## DEMO下载
   https://fir.im/ckh1
