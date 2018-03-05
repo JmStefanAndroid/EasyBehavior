@@ -213,10 +213,12 @@ public class CoAliRefreshBehavior extends AppBarLayout.Behavior {
                         isRecovering = false;
                         mViewMoveDy = 0;
                         mFingerMoveDy = 0;
+                        isPining = false;
                     }
 
                     @Override
                     public void onAnimationCancel(Animator animation) {
+                        isPining = false;
                     }
 
                     @Override
@@ -229,8 +231,10 @@ public class CoAliRefreshBehavior extends AppBarLayout.Behavior {
 
                 abl.setBottom(mParentHeight);
                 isRecovering = false;
-
+                isPining = false;
             }
+        }else{
+        isPining = false;
         }
     }
 
@@ -269,8 +273,6 @@ public class CoAliRefreshBehavior extends AppBarLayout.Behavior {
     }
 
     public void stopPin() {
-
-        isPining = false;
         recovery(mAppBarLayout);
     }
 
