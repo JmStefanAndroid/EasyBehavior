@@ -79,14 +79,14 @@ public class AppBarLayoutOverScrollViewBehavior extends AppBarLayout.Behavior {
     }
 
     @Override
-    public boolean onStartNestedScroll(CoordinatorLayout parent, AppBarLayout child, View directTargetChild, View target, int nestedScrollAxes) {
+    public boolean onStartNestedScroll(CoordinatorLayout parent, AppBarLayout child, View directTargetChild, View target, int nestedScrollAxes,int type) {
         isAnimate = true;
         if (target instanceof DisInterceptNestedScrollView) return true;//这个布局就是middleLayout
-        return super.onStartNestedScroll(parent, child, directTargetChild, target, nestedScrollAxes);
+        return super.onStartNestedScroll(parent, child, directTargetChild, target, nestedScrollAxes,type);
     }
 
     @Override
-    public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, AppBarLayout child, View target, int dx, int dy, int[] consumed) {
+    public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, AppBarLayout child, View target, int dx, int dy, int[] consumed, int type) {
         if (!isRecovering) {
             if (mTargetView != null && ((dy < 0 && child.getBottom() >= mParentHeight)
                     || (dy > 0 && child.getBottom() > mParentHeight))) {
@@ -94,8 +94,7 @@ public class AppBarLayoutOverScrollViewBehavior extends AppBarLayout.Behavior {
                 return;
             }
         }
-        super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed);
-
+        super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed,type);
     }
 
     @Override
@@ -108,9 +107,9 @@ public class AppBarLayoutOverScrollViewBehavior extends AppBarLayout.Behavior {
 
 
     @Override
-    public void onStopNestedScroll(CoordinatorLayout coordinatorLayout, AppBarLayout abl, View target) {
+    public void onStopNestedScroll(CoordinatorLayout coordinatorLayout, AppBarLayout abl, View target, int type) {
         recovery(abl);
-        super.onStopNestedScroll(coordinatorLayout, abl, target);
+        super.onStopNestedScroll(coordinatorLayout, abl, target,type);
     }
 
     private void initial(AppBarLayout abl) {

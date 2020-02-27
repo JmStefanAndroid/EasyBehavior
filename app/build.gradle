@@ -36,6 +36,6 @@ dependencies {
     compile libs["glide"]
     compile libs["statusbar_util"]
     compile project(':tabLayoutLibrary')
-    compile 'com.android.support:support-v4:25.3.1'
-    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile libs["support-v4"]
+    compile libs["recyclerview-v7"]
 }

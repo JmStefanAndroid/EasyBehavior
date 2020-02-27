@@ -211,6 +211,7 @@ public class Demo1Activity extends AppCompatActivity {
                     mMsgIv.setImageResource(R.drawable.icon_msg_black);
                     mSettingIv.setImageResource(R.drawable.icon_setting_black);
                 }
+                //为什么禁止滑动？在介于开关状态之间，不允许滑动，开启可能会导致不好的体验
                 mViewPager.setNoScroll(true);
                 break;
         }
