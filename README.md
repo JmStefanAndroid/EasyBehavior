@@ -7,7 +7,7 @@
 ## 博文地址
   [例子1 链接](http://blog.csdn.net/gjm15881133824/article/details/73742219)
   [例子2 链接](http://blog.csdn.net/gjm15881133824/article/details/74946322)
-注意：demo2已在master分支中移除，需要的话请前往backupv1分支
+### 注意：demo2已在master分支中移除，需要的话请前往backupv1分支，切换版本到低于26
 ----------
 ## DEMO下载
   https://fir.im/ckh1
