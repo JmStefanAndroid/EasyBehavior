@@ -5,8 +5,8 @@
 - 通过Behavior实现它将是你的不二选择，本项目旨在帮助各位轻松实现自己的Behavior！
 ----------
 ### 注意：
--demo2已在master分支中移除，需要的话请前往backupv1分支，切换版本到低于26
--androidx适配版本已发布，请拉取androidx分支
+- demo2已在master分支中移除，需要的话请前往backupv1分支，切换版本到低于26
+- androidx适配版本已发布，请拉取androidx分支
 ----------
 ## 博文地址
   [例子1 链接](http://blog.csdn.net/gjm15881133824/article/details/73742219)
