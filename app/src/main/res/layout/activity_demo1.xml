@@ -6,7 +6,7 @@
     android:clipChildren="false"
     android:clipToPadding="false">
 
-    <android.support.design.widget.CoordinatorLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,7 +14,7 @@
         android:clipChildren="false"
         android:clipToPadding="false">
 
-        <android.support.design.widget.AppBarLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
             app:layout_behavior="@string/appbar_overscroll_behavior">
 
 
-            <android.support.design.widget.CollapsingToolbarLayout
+            <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clipChildren="false"
@@ -38,7 +38,7 @@
 
                 <include layout="@layout/layout_uc_head_middle" />
 
-                <android.support.v7.widget.Toolbar
+                <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/titlebar_height"
@@ -50,8 +50,8 @@
 
                 <include layout="@layout/layout_uc_head_title" />
 
-            </android.support.design.widget.CollapsingToolbarLayout>
-        </android.support.design.widget.AppBarLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
         <include layout="@layout/layout_uc_content" />
 
@@ -68,5 +68,5 @@
             app:layout_behavior="@string/appbar_circleimageview_behavior" />
 
 
-    </android.support.design.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </LinearLayout>
