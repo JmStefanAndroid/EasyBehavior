@@ -10,8 +10,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile libs["support-v4"]
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs["support-v4"]
 }
 
 

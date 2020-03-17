@@ -30,12 +30,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile libs["appcompat-v7"]
-    compile libs["design"]
-    compile libs["glide"]
-    compile libs["statusbar_util"]
-    compile project(':tabLayoutLibrary')
-    compile libs["support-v4"]
-    compile libs["recyclerview-v7"]
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation libs["appcompat-v7"]
+    implementation libs["design"]
+    implementation libs["glide"]
+    implementation libs["statusbar_util"]
+    implementation project(':tabLayoutLibrary')
+    implementation libs["support-v4"]
+    implementation libs["recyclerview-v7"]
 }
